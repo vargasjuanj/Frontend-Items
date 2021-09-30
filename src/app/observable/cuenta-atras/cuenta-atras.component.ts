@@ -11,10 +11,12 @@ import { ObservableSubject } from "./observable-subject.class"
 export class CuentaAtrasComponent{
 
 value : String = ''
+
 value2 : String = ''
-// A un objeto observable se pueden subscribir muchos observadores, cuando se completa, se le avisa a todos los observadores
+
+// A un objeto observable se pueden subscribir muchos observadores. Cuando se completa, se le avisa a todos los observadores
 private observableSubject: ObservableSubject = new ObservableSubject()
-//Cuando te subscribes pones el spiner en marcha y cuando llega el dato ocultas el spinner
+//Cuando te subscribes pones el spinner en marcha y cuando llega el dato ocultas el spinner
 ngOnInit(): void {
     //observador 1
     this.observableSubject.getObservable().subscribe(

@@ -1,13 +1,16 @@
 import { Observable, Subject, Subscription, timer } from "rxjs";
 
 
-// EN DEFINITIVA UN OBSERVABLE QUE LOS DEMAS PUEDEN OBSERVAR Y ESE DATO VA A CAMBIAR, 
+// EN DEFINITIVA UN OBSERVABLE ES PARA QUE LOS DEMAS PUEDAN OBSERVAR Y ESE DATO VA A CAMBIAR, 
 // YO CON ESTO PUEDO HACER ALGO QUE LOS DEMÁS PUEDEN OBSERVAR (UNO O VARIOS)
 // En esta clase se es observador y observable a la vez. Observador es el atributo subject y es observadora la clase del timer
 // Es decir esta clase es observadora del timer, y a su vez es observable por otros
 // Una vez que se completa el observable ya no se puede reutilizar, hay que crear otra instancia
 export class ObservableSubject {
+    
     private subject: Subject<String> = new Subject();
+
+    
     constructor() {
         //Cuenta atras 5 4 3 2 1 
 
@@ -29,8 +32,9 @@ export class ObservableSubject {
 
     }
 
-    //Lo devuelve como un observable de tipo String, esto me lo da la herencia porque Subject hereda de Observable
+    //Lo devuelve como un observable de tipo String, esto me lo da la herencia porque Subject hereda de Observable.
+    // Al estar usando next arriba, cuando usamos esta función, se estan devolviendo los datos del next
     getObservable(): Observable<String> {
-        return this.subject.asObservable()
+        return this.subject.asObservable() // Método de la clase Observable
     }
 }

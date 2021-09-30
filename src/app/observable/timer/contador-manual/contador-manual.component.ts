@@ -37,7 +37,7 @@ export class ContadorManualComponent implements OnInit {
 
 
   //COMO TERCER PASO REGISTRAMOS LOS OBSERVADORES,VAMOS APROVECHAR ESTE METODO  QUE SE EJECUTA AL PRINCIPIO
-// ESTO DESPUES SE DEBERIA AMOLDAR A CLASES INDEPENDIENTES, USAR EN OTRAS CLASES COMO INYECCION DE DEPENDENCIAS
+// ESTO DESPUES SE DEBERIA AMOLDAR A CLASES INDEPENDIENTES, USAR EN OTRAS CLASES COMO INYECCION DE DEPENDENCIAS, COMO EN EL COMPONENTE CUENTA ATRAS QUE INYECTA LA CLASE observable-subject.class.ts
   ngOnInit(): void {
     // Para que yo sea observador primero lo que debo hacer es verlo como un observable, eso lo consiguo con el metodo asObservable() que me permite verlo como un observable generico, no estoy atado al tipo del sujeto a tratar, es generico
     // Con value establesco la variable que va a recoger el dato que nos manda el observable (this.counter)

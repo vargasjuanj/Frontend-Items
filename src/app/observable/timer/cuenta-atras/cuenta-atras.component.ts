@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ContadorObservableService } from '../contador-manual/contador-observable.service';
 
 import { ObservableSubject } from "./observable-subject.class"
 
@@ -17,6 +18,15 @@ value2 : String = ''
 // A un objeto observable se pueden subscribir muchos observadores. Cuando se completa, se le avisa a todos los observadores
 private observableSubject: ObservableSubject = new ObservableSubject()
 //Cuando te subscribes pones el spinner en marcha y cuando llega el dato ocultas el spinner
+
+
+// Esto nada que ver, estoy inyectando el ejercicio de contador
+
+contador! : number
+constructor(private contadorObservableService: ContadorObservableService){
+
+}
+
 ngOnInit(): void {
     //observador 1
     this.observableSubject.getObservable().subscribe(
@@ -31,7 +41,8 @@ this.observableSubject.getObservable().subscribe(
     error => alert('Observer2, error code: '+ error)
 )
 
-
+/////////////////////////////////////////////// Parte de la inyeccion
+this.contadorObservableService.getObservable().subscribe(value => this.contador = value)
 }
 
 

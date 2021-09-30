@@ -1,0 +1,3 @@
+Primer crear un componente comun, que haga la función de un contador ContadorManualComponent
+Despues se convierte el componente en observable
+Por ultimo creamos los observadores, para que los datos del conteo se reflejen en varios lugares al mismo TimerComponent

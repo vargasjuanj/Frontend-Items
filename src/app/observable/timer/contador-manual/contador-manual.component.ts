@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContadorManualComponent implements OnInit {
 
+counter = 0
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
+increase(){
+  this.counter ++
+}
 }

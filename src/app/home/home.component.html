@@ -1,0 +1,23 @@
+<p>home works!</p>
+<!-- NOTA : LO que va en el AppComponent siempre se va a ver, por eso para que se vean solo lo que se quiere cargar, solo el appComponent debe tener el routeroutlet -->
+
+<!-- Un Pipe lo que hace es filtrar la visualización de elementos, se pueden concatener tambien -->
+<!-- Usa un Pipe de Angular, pero a la vez, con :format (que es nuestro y está en el componente como get format) lo personalizamos más -->
+
+<p>Hoy es {{today | date:format | uppercase}}</p>
+<button (click)="toggleFormat()">Toggle Format</button>
+<hr>
+<p>
+  Pipe Propio que invierte una palabra, en este caso se está inviertiendo juan
+
+</p>
+<p>Me llamo {{nombre | reversed}}</p>
+<hr>
+ 
+ <p>Cuenta atras</p>
+
+ <!-- Para utilizar este componente desde observable debo exportarlo en el modulo observable, para que lo pueda utilizar otro -->
+<app-cuenta-atras></app-cuenta-atras>
+<p>Ojo! Una vez completados dejan de funcionar, despues hay q volver a crear otra instancia</p>
+<hr>
+

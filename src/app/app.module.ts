@@ -7,6 +7,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { ReversedPipe } from './reversed.pipe';
  import { ObservableModule } from './observable/observable.module';
 import { HomeComponent } from './home/home.component';
+import { CoreModule } from './core/core.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,10 +17,13 @@ import { HomeComponent } from './home/home.component';
     HomeComponent,
   ],
   imports: [
+
+    
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-     ObservableModule
+    CoreModule,
+     ObservableModule,
+     BrowserAnimationsModule,
     
 
   ],

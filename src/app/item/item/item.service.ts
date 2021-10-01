@@ -20,9 +20,9 @@ export class ItemService {
 
   constructor(private httpService: HttpService) { }
 
-
+// Cuando retornamos esta propieda como un observable se estaria ya formando un vinculo con el componente, sin que sea neceraio volver a retornar, porque una vez que se retorna en el componente este se subscribe a esa propiedad y queda conectado, observandola y obteniendo los datos que esta envia a traves de next
   getAllItems(): Observable<Item[]> {
-    this.readAll()
+     this.readAll()
     return this.allItems.asObservable()
   }
 

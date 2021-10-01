@@ -1,8 +1,8 @@
-<p>item works!</p>
+ <p>item works!</p>
 <h3> CRUD Items</h3>
 <h4>Create </h4>
 
-<form>
+ <form>
 
     <input type="text" name="name" [(ngModel)]="creationItem.name" placeholder="Name" >
 
@@ -28,9 +28,9 @@
         <button type="submit" (click)="cancel()"> Cancel</button>
 
     </form>
-</div>
+</div> 
 
-<h4 *ngIf="items != undefined && items.length == 0">Lista vacia!!!</h4>
+<h4 *ngIf="items !== undefined && items.length === 0">Lista vacia!!!</h4>
 
 <ul *ngFor="let item of items">
 

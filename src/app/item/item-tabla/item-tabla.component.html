@@ -6,26 +6,30 @@
     <table class="table table-dark">
       <thead>
         <tr>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Email</th>
+          <th>Index</th>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Acciones</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>John</td>
-          <td>Doe</td>
-          <td>john@example.com</td>
-        </tr>
-        <tr>
-          <td>Mary</td>
-          <td>Moe</td>
-          <td>mary@example.com</td>
-        </tr>
-        <tr>
-          <td>July</td>
-          <td>Dooley</td>
-          <td>july@example.com</td>
+        <tr *ngFor= "let item of items; let i = index">
+          <td>{{i}}</td>
+          <td>{{item.id}}</td>
+          <td> <input type="text" name="name" [(ngModel)]="item.name"> </td>
+          <td><input type="text" name="description"  [(ngModel)]="item.description"></td>
+          <td>
+            <button [ngStyle]="{'background':'coral','color':'white'}" (click)="read(item.id!)">
+              read
+            </button>
+            <button [ngStyle]="{'background':'red','color':'white'}" (click)="delete(item.id!)">
+              delete
+            </button>
+            <button [style.background]="'blue'"[style.color]="'white'" (click)="update(item)" >
+              update
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>

@@ -11,7 +11,12 @@ const routes: Routes = [
  {path:'contar', loadChildren:'./observable/observable.module#ObservableModule' /* loadChildren: () => import('./observable/observable.module').then(m => m.ObservableModule)*/},
  
  {path: 'items',
- loadChildren: () => import('./item/item.module').then(m => m.ItemModule)}
+ loadChildren: () => import('./item/item.module').then(m => m.ItemModule)},
+
+ {path: '**', redirectTo:'items/tabla'}
+
+ 
+
 
 
 ];

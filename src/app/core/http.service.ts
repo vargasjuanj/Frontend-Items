@@ -47,6 +47,7 @@ export class HttpService {
   //   )
   // }
 
+  // Sin el pipe y su map tambien larga los datos igual, creo que no seria necesario porque como se deshabilitaron los otros metodos, el map no esta transformando nada, devuelve lo mismo que si no tuviera el map en este caso
   get(endpoint: string): Observable<any> {
 
 

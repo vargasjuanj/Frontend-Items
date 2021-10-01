@@ -1,36 +1,73 @@
 <p>item-tabla works!</p>
 
 <div class="container">
-    <h2>Black/Dark Table</h2>
-    <p>The .table-dark class adds a black background to the table:</p>            
-    <table class="table table-dark">
-      <thead>
-        <tr>
-          <th>Index</th>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor= "let item of items; let i = index">
-          <td>{{i}}</td>
-          <td>{{item.id}}</td>
-          <td> <input type="text" name="name" [(ngModel)]="item.name"> </td>
-          <td><input type="text" name="description"  [(ngModel)]="item.description"></td>
-          <td>
-            <button [ngStyle]="{'background':'coral','color':'white'}" (click)="read(item.id!)">
-              read
-            </button>
-            <button [ngStyle]="{'background':'red','color':'white'}" (click)="delete(item.id!)">
-              delete
-            </button>
-            <button [style.background]="'blue'"[style.color]="'white'" (click)="update(item)" >
-              update
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <h2>Black/Dark Table</h2>
+  <p>The .table-dark class adds a black background to the table:</p>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th>Index</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items; let i = index">
+        <td>{{i}}</td>
+        <td>{{item.id}}</td>
+        <td> <input type="text" name="name" [(ngModel)]="item.name"> </td>
+        <td><input type="text" name="description" [(ngModel)]="item.description"></td>
+        <td>
+          <button [ngStyle]="{'background':'coral','color':'white'}" (click)="read(item.id!)">
+            read
+          </button>
+          <button [ngStyle]="{'background':'red','color':'white'}" (click)="delete(item.id!)">
+            delete
+          </button>
+          <button [style.background]="'blue'" [style.color]="'white'" (click)="update(item)">
+            update
+          </button>
+          <button [style.background]="'grey'" [style.color]="'white'" (click)="prepareUpdate(item.id!)">
+            prepareUpdate
+          </button>
+          <button *ngIf="i === (items.length-1)"[style.background]="'green'" [style.color]="'white'" (click)="add()">
+            +
+          </button>
+        </td>
+      </tr>
+      <tr *ngIf="addItem">
+        <td>not</td>
+        <td>not</td>
+        <td> <input type="text" name="name" [(ngModel)]="createItem.name"> </td>
+        <td><input type="text" name="description" [(ngModel)]="createItem.description"></td>
+        <td>
+          <button [style.background]="'green'" [style.color]="'white'" (click)="create()">
+            create
+          </button>
+          <button [style.background]="'black'" [style.color]="'white'" (click)="cancelAdd()">
+            cancel
+          </button>
+        </td>
+      
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="updateCheked">
+    <h4>Prepare Update</h4>
+
+    <form>
+      <input readonly type="number" name="id" [(ngModel)]="updateItem.id" placeholder="Id">
+
+      <input type="text" name="name" [(ngModel)]="updateItem.name" placeholder="Name">
+
+      <input type="text" name="description" [(ngModel)]="updateItem.description" placeholder="Description">
+
+      <button type="submit" (click)="save()"> Save</button>
+      <button type="submit" (click)="cancel()"> Cancel</button>
+
+    </form>
   </div>
+</div>

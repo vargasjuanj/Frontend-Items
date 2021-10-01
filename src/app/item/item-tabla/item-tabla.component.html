@@ -3,6 +3,10 @@
 <div class="container">
   <h2>Black/Dark Table</h2>
   <p>The .table-dark class adds a black background to the table:</p>
+
+  <h4 *ngIf="items !== undefined && items.length === 0" style="color:red">
+   Tabla Vacia!!!
+  </h4>
   <table class="table table-dark">
     <thead>
       <tr>
@@ -14,6 +18,8 @@
       </tr>
     </thead>
     <tbody>
+
+
       <tr *ngFor="let item of items; let i = index">
         <td>{{i}}</td>
         <td>{{item.id}}</td>
@@ -37,6 +43,9 @@
           </button>
         </td>
       </tr>
+
+
+
       <tr *ngIf="addItem">
         <td>not</td>
         <td>not</td>
@@ -52,6 +61,24 @@
         </td>
       
       </tr>
+
+
+      <tr *ngIf="items !== undefined && items.length === 0">
+        <td>not</td>
+        <td>not</td>
+        <td> <input type="text" name="name" [(ngModel)]="createItem.name"> </td>
+        <td><input type="text" name="description" [(ngModel)]="createItem.description"></td>
+        <td>
+          <button [style.background]="'green'" [style.color]="'white'" (click)="create()">
+            create
+          </button>
+          <button [style.background]="'black'" [style.color]="'white'" (click)="cancelAdd()">
+            cancel
+          </button>
+        </td>
+      
+      </tr>
+
     </tbody>
   </table>
 

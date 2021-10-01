@@ -44,7 +44,10 @@ export class ItemComponent implements OnInit {
     this.itemService.delete(id)
   }
 
-  
+  prepareUpdate(id: number){
+    this.itemService.prepareUpdate(id)
+  }
+
   save(){
     this.updateCheked = false
     this.itemService.update(this.updateItem)

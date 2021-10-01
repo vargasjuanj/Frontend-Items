@@ -4,25 +4,25 @@
 
 <form>
 
-    <input type="string" name="name" [(ngModel)="creationItem.name" placeholder="Name" ]>
+    <input type="text" name="name" [(ngModel)]="creationItem.name" placeholder="Name" >
 
-    <input type="string" name="description" [(ngModel)="creationItem.description" placeholder="Description" ]>
+    <input type="string" name="description" [(ngModel)]="creationItem.description" placeholder="Description" >
 
-    <button type="submit" (click)="create()" [disabled]="creationItem.name === ''"> Create</button>
+    <button type="submit" (click)="create()" [disabled]="creationItem.name === ''"> Create</button> 
 
 
-</form>
+</form> 
 
 
 <div [style.display]="updateCheked? 'block':'none'">
     <h4>Update</h4>
 
     <form>
-        <input readonly type="number" name="id" [(ngModel)]="updateItem.id" placeholder="Id" ]>
+        <input readonly type="number" name="id" [(ngModel)]="updateItem.id" placeholder="Id" >
 
-        <input type="string" name="name" [(ngModel)]="updateItem.name" placeholder="Name" ]>
+        <input type="string" name="name" [(ngModel)]="updateItem.name" placeholder="Name" >
 
-        <input type="string" name="description" [(ngModel)]="updateItem.description" placeholder="Description" ]>
+        <input type="string" name="description" [(ngModel)]="updateItem.description" placeholder="Description" >
 
         <button type="submit" (click)="save()"> Save</button>
         <button type="submit" (click)="cancel()"> Cancel</button>
@@ -36,9 +36,9 @@
 
     <li>
 
-        <input readonly type="number" name="id" [(ngModel)]="item.id" ]>
+        <input readonly type="number" name="id" [(ngModel)]="item.id" >
 
-        <input readonly type="string" name="name" [(ngModel)]="item.name"  ]>
+        <input readonly type="string" name="name" [(ngModel)]="item.name"  >
 
         <button type="submit" (click)="read(item.id)"> Read</button>
        

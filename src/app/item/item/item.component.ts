@@ -9,14 +9,13 @@ import { ItemService } from './item.service';
   styleUrls: ['./item.component.scss']
 })
 export class ItemComponent implements OnInit {
-
   items!: Item[]
   updateCheked = false
-  updateItem!: Item
-  creationItem!: Item
+  updateItem: Item = {id: 0, name: '', description: ''}
+  creationItem: Item = {id: 0, name: '', description: ''}
 
 
-
+name = ''
 
   constructor(private httpService: HttpService, private itemService: ItemService) { }
 

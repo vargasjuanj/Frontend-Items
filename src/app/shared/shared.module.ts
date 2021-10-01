@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from './material/material.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -9,12 +10,14 @@ import { MaterialModule } from './material/material.module';
   declarations: [],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
     //RouterModule  //Para el [routerLink] dinamico
   ],
   exports:[
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ]
 })
 export class SharedModule { }

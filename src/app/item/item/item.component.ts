@@ -9,20 +9,19 @@ import { ItemService } from './item.service';
   styleUrls: ['./item.component.scss']
 })
 export class ItemComponent implements OnInit {
-  items!: Item[]
+  items: Item[] = []
   updateCheked = false
   updateItem: Item = {id: 0, name: '', description: ''}
   creationItem: Item = {id: 0, name: '', description: ''}
 
 
-name = ''
 
   constructor(private httpService: HttpService, private itemService: ItemService) { }
 
   ngOnInit(): void {
-
-    this.updateItem = {id: 0, name: '', description: ''}
-    this.creationItem = {id: 0, name: '', description: ''}
+    // this.items = []
+    // this.updateItem = {id: 0, name: '', description: ''}
+    // this.creationItem = {id: 0, name: '', description: ''}
     this.itemService.getAllItems().subscribe(items => this.items = items)
     this.itemService.getUpdateItem().subscribe(item =>{
        this.updateItem = item
@@ -30,7 +29,7 @@ name = ''
     }
       )
 
-      this.itemService.getReadItem().subscribe(item => alert(item.id + item.name + item.description))
+      this.itemService.getReadItem().subscribe(item => alert(item.id +' ' + item.name +' ' + item.description))
 
   }
 

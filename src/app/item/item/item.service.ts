@@ -34,7 +34,7 @@ export class ItemService {
   prepareUpdate(id: number){
     this.httpService.get(ItemService.URI + '/' + id).subscribe(
       (itemValue: Item) => this.updateItem.next(itemValue),
-      error => alert(error)
+      error => alert('prepareUpdate '+error)
     )
   }
 
@@ -46,28 +46,28 @@ export class ItemService {
   read(id: number){
     this.httpService.get(ItemService.URI + '/' + id).subscribe(
       (itemValue: Item) => this.readItem.next(itemValue),
-      error => alert(error)
+      error => alert('read '+error)
     )
   }
 
   private readAll(){
     this.httpService.get(ItemService.URI).subscribe(
       (itemArray: Item[]) => this.allItems.next(itemArray),
-      error => alert(error)
+      error => alert('readAll '+error)
     )
   }
 
   delete(id: number){
     this.httpService.delete(ItemService.URI + '/' + id).subscribe(
       () => this.readAll(),
-      error => alert(error)
+      error => alert('delete '+error)
     )
   }
 
   create(item: Item){
     this.httpService.post(ItemService.URI, item).subscribe(
       () => this.readAll(),
-      error => alert(error)
+      error => alert('create '+error)
     )
   }
 
@@ -75,7 +75,7 @@ export class ItemService {
   update(item: Item){
     this.httpService.put(ItemService.URI + '/' + item.id, item).subscribe(
       () => this.readAll(),
-      error => alert(error)
+      error => alert('update '+error)
     )
   }
 }

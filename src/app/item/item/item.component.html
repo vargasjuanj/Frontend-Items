@@ -8,7 +8,7 @@
 
     <input type="string" name="description" [(ngModel)]="creationItem.description" placeholder="Description" >
 
-    <button type="submit" (click)="create()" [disabled]="creationItem.name === ''"> Create</button> 
+    <button type="submit" (click)="create()" [disabled]="creationItem.name == ''"> Create</button> 
 
 
 </form> 
@@ -30,9 +30,9 @@
     </form>
 </div>
 
-<h4 *ngIf="items !== undefined && items.length === 0">Lista vacia!!!</h4>
+<h4 *ngIf="items != undefined && items.length == 0">Lista vacia!!!</h4>
 
-<ul *ngfor="let item of items">
+<ul *ngFor="let item of items">
 
     <li>
 
@@ -40,11 +40,11 @@
 
         <input readonly type="string" name="name" [(ngModel)]="item.name"  >
 
-        <button type="submit" (click)="read(item.id)"> Read</button>
+        <button type="submit" (click)="read(item.id!)"> Read</button>
        
-        <button type="submit" (click)="delete(item.id)"> Delete</button>
+        <button type="submit" (click)="delete(item.id!)"> Delete</button>
        
-        <button type="submit" (click)="prepareUpdate(item.id)"> Update</button>
+        <button type="submit" (click)="prepareUpdate(item.id!)"> Update</button>
 
     </li>
 </ul>

@@ -42,7 +42,7 @@ this.observableSubject.getObservable().subscribe(
 )
 
 /////////////////////////////////////////////// Parte de la inyeccion
-this.contadorObservableService.getObservable().subscribe(value => this.contador = value)
+//this.contadorObservableService.getObservable().subscribe(value => this.contador = value)
 }
 
 
